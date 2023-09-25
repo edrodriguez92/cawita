@@ -1,0 +1,218 @@
+@import url('/assets/css/theme.css');
+@import url('/assets/css/reset.css');
+@import url('/assets/css/grid.css');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;1,200&family=KoHo:ital,wght@0,200;0,500;0,700;1,200&display=swap');
+
+
+/* STRUCTURE */
+html {
+    font-size: 10px;
+    height: 100%;
+}
+
+body {
+    font-size: 1.4rem;
+    font-family: 'jost', Helvetica, sans-serif;
+    background: #f1f1f1;
+    height: 100%;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 5rem;
+    font-weight: 700;
+} 
+    
+h2 {
+    font-size: 3.3rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+/* LAYOUT */ 
+.navbar {
+    background: #d0f2d3;  
+    padding: 0.5rem;
+    box-shadow: 0 0 0.8rem -0.4rem #1d1d1d;
+}
+
+.navbar .menu {
+    display: none;
+    font-size: 2.5rem;
+    font-weight: 500;
+    font-family: none;
+    margin: 0. 0.2rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 50%;
+    border: none;
+    background: none;
+    transition: background-color 0.2s linear
+}
+
+.navbar .menu:hover {
+    background: var(--color-navbar-menu-hover);
+}
+
+.navbar figure {
+    height: 6rem;
+    display: inline-block;
+}
+
+.navbar figure img {
+    max-height: 100%;
+    width: auto;
+    border-radius: 50%;
+}
+
+.wrapper {
+    height: calc(100% - 7rem);
+}
+
+.wrapper::after {
+   content: ''; 
+   display: block;
+   clear: both;
+}
+
+.sidenav {
+    
+    float: left;
+    width: 20rem;
+    background: #27351d;
+    color: #fff;
+    height: 100%;
+    box-shadow: 0.1rem 0.1rem0.3rem 0 #1d1d1d;
+    overflow: auto;
+    clear: both;
+
+    scrollbar-color: var(--color-scrollbar-dark) var(--color-scrollbar-dark);
+    scrollbar-width: auto;
+}
+
+.sidenav::-webkit-scrollbar-thumb {
+    background: var(--color-scrollbar-dark);
+}
+
+.sidenav::-webkit-scrollbar {
+    width: 0.7rem;
+    background: var(--color-scrollbar-dark);
+}
+
+.sidenav .category {
+    font-size: 2.2rem;
+    padding: 1.5rem 1rem; 
+    font-weight: 300;
+    background: #2d3c22;
+}
+
+.sidenav .menu li {
+    font-size: 1.6rem;
+    font-weight: 300;  
+    transition: background-color 0.1s linear;
+}
+
+.sidenav .menu a {
+    text-decoration: none;
+    padding: 1.2rem;
+    display: block;
+}
+
+.sidenav .menu a::before {
+    content: "\2665";
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+.sidenav .menu span {
+    vertical-align: middle;
+}
+
+.sidenav .menu li:hover,
+.sidenav .menu li:hover {
+    border-right: 0.4rem solid #d0f2d3;
+    background: #324226;
+}
+
+main {
+    float: left;
+    width: calc(100% - 25rem);
+    height: 100%;
+    overflow: auto;
+    padding: 2rem;
+
+    scrollbar-color: var(--color-scrollbar-light) var(--color-scrollbar-light);
+    scrollbar-width: auto;
+}
+
+main::-webkit-scrollbar-thumb {
+    background: var(--color-scrollbar-light);
+}
+
+main::-webkit-scrollbar {
+    width: 0.7rem;
+    background: var(--color-scrollbar-light);
+}
+
+.row figure {
+    max-height: 100%;
+    width: auto;
+}
+
+.row figure img {
+   max-width: 100%; 
+}
+
+@media screen and (max-width: 1024px) {
+    .wrapper {
+        height: calc(100% - 5.4rem);
+        position: relative;        
+    }
+
+    .navbar .menu {
+        display: inline-block;
+    }
+
+    .navbar figure {
+        display: none;
+    }
+
+    .sidenav {
+        position: absolute;
+        z-index: 90;
+        top: 0;
+        width: 80%;
+        max-width: 25rem;
+        left: -80%;
+        transition: left 0.6s ease-in;
+    }
+
+    .sidenav.open {
+        left: 0;
+        transition: left 0.6s ease-out;
+    }
+
+    .sidenav .category {
+        position: relative;
+
+    }
+
+    .sidenav .category::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 4.5rem;
+        top: 0;
+        right: 0.5rem;
+        background: url(/assets/imagen/Logos/LCW_negro.jpg) no-repeat center center;
+        background-size: 100% auto;
+    }   
+
+    main {
+        width: 100%;
+    }
+}
+
+
+
+
